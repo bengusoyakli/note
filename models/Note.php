@@ -1,25 +1,25 @@
 <?php
 
-namespace kouosl\gallery\models;
+namespace kouosl\note\models;
 
 use Yii;
 
 /**
- * This is the model class for table "gallery".
+ * This is the model class for table "note".
  *
  * @property int $id
  * @property string $title
  * @property string $description
  * @property string $date
  */
-class Gallery extends \yii\db\ActiveRecord
+class Note extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'gallery';
+        return 'note';
     }
 
     /**

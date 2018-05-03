@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\gallery\models;
+namespace kouosl\note\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * GallerySearch represents the model behind the search form about `app\modules\gallery\models\Gallery`.
+ * NoteSearch represents the model behind the search form about `app\modules\note\models\Note`.
  */
-class GallerySearch extends Gallery
+class NoteSearch extends Note
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class GallerySearch extends Gallery
      */
     public function search($params)
     {
-        $query = gallery::find();
+        $query = note::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

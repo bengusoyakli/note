@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\gallery\controllers\frontend;
+namespace kouosl\note\controllers\frontend;
 
 
 class DefaultController extends \kouosl\base\controllers\backend\BaseController

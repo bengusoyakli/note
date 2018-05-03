@@ -1,6 +1,6 @@
 <?php
 
-namespace kouosl\gallery;
+namespace kouosl\note;
 use Yii;
 use yii\filters\auth\CompositeAuth;
 use yii\filters\auth\HttpBasicAuth;
@@ -57,16 +57,16 @@ class Module extends \kouosl\base\Module
         Yii::$app->i18n->translations['site/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
             'sourceLanguage' => 'en-US',
-            'basePath' => '@kouosl/gallery/messages',
+            'basePath' => '@kouosl/note/messages',
             'fileMap' => [
-                'gallery/gallery' => 'gallery.php',
+                'note/note' => 'note.php',
             ],
         ];
     }
 
     public static function t($category, $message, $params = [], $language = null)
     {
-        return Yii::t('gallery/' . $category, $message, $params, $language);
+        return Yii::t('note/' . $category, $message, $params, $language);
     }
 
     public static function initRules(){
@@ -75,7 +75,7 @@ class Module extends \kouosl\base\Module
             [
                 'class' => 'yii\rest\UrlRule',
                 'controller' => [
-                    'gallery/gallerys',
+                    'note/note',
                 ],
                 'tokens' => [
                     '{id}' => '<id:\\w+>'

@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\gallery\controllers\api;
+namespace kouosl\note\controllers\api;
 
-use kouosl\gallery\models\Gallery;
+use kouosl\note\models\Note;
 use Yii;
 
-class GalleryController extends DefaultController {
+class NoteController extends DefaultController {
 	
-	public $modelClass = 'kouosl\gallery\models\Gallery';
+	public $modelClass = 'kouosl\note\models\Note';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -17,7 +17,7 @@ class GalleryController extends DefaultController {
 	
 	public function actionView($id){
 
-		$model = Gallery::findOne($id);
+		$model = Note::findOne($id);
 		
 		if(!$model)
 			return ['status' => '404','message' => 'Not Found'];
@@ -26,14 +26,14 @@ class GalleryController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return Gallery::find()->all();
+		return Note::find()->all();
 	}
 	
 	public function actionCreate(){
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Gallery();
+		$model = new Note();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -51,7 +51,7 @@ class GalleryController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = Gallery::findOne($id);
+		$model = Note::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
@@ -64,7 +64,7 @@ class GalleryController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Gallery::findOne($id)->delete())
+		if(Note::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];
