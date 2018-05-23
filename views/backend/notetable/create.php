@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model kouosl\note\models\Note */
+/* @var $model kouosl\note\models\NoteTable */
 
-$this->title = 'Create Note';
-$this->params['breadcrumbs'][] = ['label' => 'Notes', 'url' => ['index']];
+$this->title = 'Create Note Table';
+$this->params['breadcrumbs'][] = ['label' => 'Note Tables', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="note-create">
+<div class="note-table-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

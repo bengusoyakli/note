@@ -4,19 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 
-
-
 /* @var $this yii\web\View */
-/* @var $model kouosl\note\models\Note */
+/* @var $model kouosl\note\models\NoteTable */
 
-
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Notes', 'url' => ['index']];
+$this->title = $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Note Tables', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
-
-<div class="note-view">
+<div class="note-table-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -35,15 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'name',
-            'description:ntext',
-            'updated_at',
-            'created_at',
+            'noteId',
+            'note:ntext',
         ],
-		
     ]) ?>
-
-	
-	
-
+     
 </div>

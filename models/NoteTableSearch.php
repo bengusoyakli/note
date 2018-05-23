@@ -5,12 +5,12 @@ namespace kouosl\note\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use kouosl\note\models\Note;
+use kouosl\note\models\NoteTable;
 
 /**
- * NoteSearch represents the model behind the search form of `kouosl\note\models\Note`.
+ * NoteTableSearch represents the model behind the search form of `kouosl\note\models\NoteTable`.
  */
-class NoteSearch extends Note
+class NoteTableSearch extends NoteTable
 {
     /**
      * {@inheritdoc}
@@ -18,8 +18,8 @@ class NoteSearch extends Note
     public function rules()
     {
         return [
-            [['id'], 'integer'],
-            [['name', 'description', 'updated_at', 'created_at'], 'safe'],
+            [['id', 'noteId'], 'integer'],
+            [['note'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class NoteSearch extends Note
      */
     public function search($params)
     {
-        $query = Note::find();
+        $query = NoteTable::find();
 
         // add conditions that should always apply here
 
@@ -60,12 +60,10 @@ class NoteSearch extends Note
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
-            'updated_at' => $this->updated_at,
-            'created_at' => $this->created_at,
+            'noteId' => $this->noteId,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'description', $this->description]);
+        $query->andFilterWhere(['like', 'note', $this->note]);
 
         return $dataProvider;
     }
