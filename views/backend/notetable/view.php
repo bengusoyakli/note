@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
+//view//
 
 /* @var $this yii\web\View */
 /* @var $model kouosl\note\models\NoteTable */
