@@ -32,7 +32,6 @@ $this->params['breadcrumbs'][] = $this->title;
 					        ],
 					    ]);
 
-
 Portlet::begin(['title' => $this->title, 'icon' => 'glyphicon glyphicon-cog']);
 
     echo $this->render('view',$data);
