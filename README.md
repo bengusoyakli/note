@@ -1,5 +1,6 @@
 # note
 Kocaeli university open source lab yii2 sample module
+
 Proje Açýklamalarý
 
 1.Projemde oluþturduðum modülümün adý note'tur. Google keep uygulamasýna benzer bir not alma uygulamasýdýr. Basit bir arayüzü vardýr. Bu arayüz ile not oluþturabileceðiniz  tablo sayfasýna gelebilirsiniz.Burada;
@@ -12,17 +13,35 @@ Proje Açýklamalarý
 3.Giriþlerinde herhangi bir izin gerekmemektedir.
 4.Modülümün arayüzü bulunan index sayfasýna ulaþmak için;
 " http://portal.kouosl/note " adresine girebilirsiniz.
- Buradan da not oluþtur butonuna týklayarak not oluþturma sayfasýna yönlendirileceksiniz.
+Buradan da not oluþtur butonuna týklayarak not oluþturma sayfasýna yönlendirileceksiniz.
 
-5.Modülümde migration içerisinde toplamda iki tane tablo bulunmaktadýr. Bu tablolardan Note adlý tabloda;
+Veri tabaný tablolarý
+
+Modülümde migration içerisinde toplamda iki tane tablo bulunmaktadýr. Bu tablolardan Note adlý tabloda;
 -alýnacak notun id'si
 -adý 
 -açýklamasý
 -oluþturma ve güncelleme tarihleri yer almaktadýr.
 
-6.NoteTable adlý tabloda ise notlarýn;
+NoteTable adlý tabloda ise notlarýn;
 - id'si ve note adýnda iki sütun bulunmaktadýr. Ve bu iki tabloda bulunan Ýd'ler birbirlerine foreign key ile baðlanýp iliþkilendirme yapýlmýþtýr.
 
-7.Migration'ýn bulunduðu note alma sayfasýna eriþmek için;
+Proje Kurulumu 
+
+Portal dizini içerisindeki composer.js dosyasýný açtýktan sonra "repositories" kýsmýna:
+
+"type": "vcs",
+"url": "https://github.com/bengusoyakli/note.git"
+satýrlarýný, "require" kýsmýna ise:
+
+"kouosl/note":"dev-master"
+satýrýný ekleyiniz.
+
+Daha sonra portal/backend/config/main.php ve portal/frontend/config/main.php dosyalarýnda "modules" kýsýmlarýna:
+
+'note' => ['class' => 'kouosl\note\Module',],
+satýrýný ekleyiniz.
+
+Migration'ýn bulunduðu note alma sayfasýna eriþmek için ise ;
 "http://portal.kouosl/admin/note/note" adresine girebilirsiniz.
 
